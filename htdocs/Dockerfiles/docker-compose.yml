@@ -1,0 +1,14 @@
+redis:
+    build: ./redis
+    ports:
+      - "6378:6379"
+    restart: always
+logstashagentkds:
+    build: ./logstash
+    volumes:
+        - ~/opt/htdocs/Dockerfiles/logstash/kds/agent.conf:/opt/logstash/conf/agent.conf
+    links:
+        - "redis"
+    command: logstash agent  -f /opt/logstash/conf/agent.conf
+    restart: always
+
