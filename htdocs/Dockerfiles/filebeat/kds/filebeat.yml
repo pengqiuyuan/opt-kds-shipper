@@ -1,0 +1,12 @@
+filebeat:  
+  prospectors:
+    -
+      paths:
+         - /home/ftp/logs/*/*.log
+  registry_file: /opt/sincedb/.registry
+output:
+  redis:
+    host: "192.168.99.100"
+    port: 6378
+    index: "kds_shipper_f"
+    bulk_max_size: 20000  
