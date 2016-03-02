@@ -5,10 +5,12 @@
 ├── README.md
 ├── redis
 │   └── Dockerfile
-├── logstash
+├── filebeat
 │   ├── Dockerfile
 │   └── kds
-│       └── agent.conf
+│       └── filebeat.yml
+├── log
+│   └── 2015-02-23
 ├── docker-compose-yml
 
 ```         
